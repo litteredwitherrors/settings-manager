@@ -2,8 +2,6 @@
 
 Game settings manager an application designed for serious settings management. The application was build using Node.js, Express.js, Angular.js, Mongodb and love.
 
-#Settings Manager
-
 **URL**
 
 `/settings`
