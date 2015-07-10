@@ -1,6 +1,6 @@
 # Game Settings Manager API
 
-Game settings manager an application designed for serious settings management. The application was build using Node.js, Express.js, Angular.js, Mongodb and love.
+Game settings manager an application designed for serious settings management. The application was built using Node.js, Express.js, Angular.js, Mongodb and love.
 
 **URL**
 
