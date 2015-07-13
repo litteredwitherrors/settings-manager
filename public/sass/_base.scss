@@ -1,0 +1,36 @@
+/* USER STYLES */
+
+body {
+  background-color: $bravo-color;
+  font: 1em "Play", Helvetica, Arial, sans-serif;
+  color: $site-dark;
+	line-height: 1.5;
+}
+
+h1, h2, h3, h4 {
+  margin: .5em 0;
+}
+
+h1 {
+  font-size: 2.441em;
+}
+
+h2 {
+  font-size: 1.953em;
+}
+
+h3 {
+  font-size: 1.563em;
+}
+
+h4 {
+  font-size: 1.25em;
+}
+
+a {
+  color: #00B7FF;
+}
+
+input {
+	border: none;
+}

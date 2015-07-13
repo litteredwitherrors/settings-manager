@@ -1,0 +1,25 @@
+@import 'buttons/index';
+
+.btn-ok {
+	background-color: $ok-color;
+	@extend button;
+	&:hover {
+		background-color: darken($ok-color, 10%);
+	}
+}
+
+.btn-caution {
+	background-color: $delta-color;
+	@extend button;
+	&:hover {
+		background-color: darken($delta-color, 10%);
+	}
+}
+
+.btn-alert {
+	background-color: $danger-color;
+	@extend button;
+	&:hover {
+		background-color: darken($danger-color, 10%);
+	}
+}

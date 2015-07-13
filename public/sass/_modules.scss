@@ -1,0 +1,59 @@
+.site-nav {
+	width: 70px;
+}
+
+.site-nav--list {
+	text-align: center;
+	list-style: none;
+}
+
+.site-nav--list li {
+	font-size: 2.5em;
+}
+
+.setting-card {
+  border-radius: .5em;
+	overflow: hidden;
+}
+
+.setting-card--title {
+	padding: .25em .65em;
+	display: block;
+}
+
+.editing-card {
+	width: 100%;
+}
+
+.setting-card--params {
+	padding: 1em;
+}
+
+.setting-card--params .param {
+	font-size: 1.25em;
+}
+
+.param input {
+	font-size: 1em;
+	width: 100%;
+}
+
+.setting-card--params .param:last-child {
+	margin: 1em 0;
+}
+
+.site-content {
+  width: 1250px;	
+}
+
+.settings-form {
+  padding: 1em;
+}
+
+.settings-list {
+  max-width: 100%;
+}
+
+.setting-list--card-item {
+	margin-right: .5em;
+}
