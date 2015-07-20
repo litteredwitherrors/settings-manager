@@ -1,6 +1,8 @@
 'use strict';
 
-var settingsApp = angular.module('settingsApp', ["ngAnimate"]);
+require('angular/angular');
+
+var settingsApp = angular.module('settingsApp', []);
 
 settingsApp.controller('appController', ['$scope', '$http', function($scope, $http) {
 	// $scope.creating = true;
