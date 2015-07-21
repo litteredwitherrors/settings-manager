@@ -10,7 +10,7 @@
     <link href='http://fonts.googleapis.com/css?family=VT323|Roboto+Condensed|Play' rel='stylesheet' type='text/css'>
 
     <link rel="stylesheet" href="css/fonts.css">
-    <link rel="stylesheet" href="css/application.css">
+    <!-- <link rel="stylesheet" href="css/application.css"> -->
   </head>
   <body>
     <header class="site-header">
@@ -21,74 +21,25 @@
         </ul>
       </nav>
     </header>
-		<main class="site-content" data-ng-controller="appController">
-      <button class="btn-ok" data-ng-click="setting.editing = true">New</button>
-      <form class="setting-card fade" data-ng-submit="submitForm(setting)" data-ng-if="setting.editing">
-        <h3 class="setting-card--title">New Difficulty</h3>
-        <ul class="setting-card--params">
-          <li class="param">
-            <label for="name">Name</label>
-            <input id="name" type="text" data-ng-model="setting.name">
-          </li>
-          <li class="param">
-            <label for="maxEnemyCount">Enemy Count</label>
-            <input id="maxEnemyCount" type="text" data-ng-model="setting.params.maxEnemyCount">
-          </li>
-          <li class="param">
-            <label for="maxEnemyHealth">Enemy Health</label>
-            <input id="maxEnemyHealth" type="text" data-ng-model="setting.params.maxEnemyHealth">
-          </li>
-          <li class="param">
-            <label for="maxPlayerhealth">Player Health</label>
-            <input id="maxPlayerhealth"type="text" data-ng-model="setting.params.maxPlayerhealth">
-          </li>
-          <li class="param">
-            <button type="submit" data-ng-click="setting.editing = false">Cancel</button>
-            <button type="submit">Submit</button>
-          </li>
-        </ul>
-      </form>
+		<main data-ng-controller="appController">
       <ul class="settings-list">
-        <li class="setting-list--card-item" data-ng-repeat="setting in settings">
-          <div class="setting-card" data-ng-if="!setting.editing">
-            <h3 class="setting-card--title">{{setting.name}}</h3>
-            <ul class="setting-card--params">
-              <li class="param">
-                Enemy Count: {{setting.params.maxEnemyCount}}
-              </li>
-              <li class="param">
-                Enemy Health: {{setting.params.maxEnemyHealth}}
-              </li>
-              <li class="param">
-                Player Health: {{setting.params.maxPlayerhealth}}
-              </li>
-              <li class="param">
-                <button class="btn-caution" data-ng-click="edit(setting)">Edit</button>
-                <button class="btn-alert" data-ng-click="destroy(setting._id)">Destroy</button>
-              </li>
-            </ul>
-          </div>
-          <div class="setting-card" data-ng-if="setting.editing">
-            <label for="name"><h3 class="setting-card--title editing-card">Name: <input id="name"type="text" data-ng-model="setting.name"></h3></label>
-            <ul class="setting-card--params">
-              <li class="param">
-                <label for="enemyCount">Enemy Count: </label>
-                <input id="enemyCount" type="number" data-ng-model="setting.params.maxEnemyCount" >
-              </li>
-              <li class="param">
-                <label for="enemyHealth">Enemy Health: </label>
-                <input id="enemyHealth" type="number" data-ng-model="setting.params.maxEnemyHealth">
-              </li>
-              <li class="param">
-                <label for="playerHealth">Player Health: </label>
-                <input id="playerHealth" type="number" data-ng-model="setting.params.maxPlayerhealth">
-              </li>
-              <li class="param">
-                <button data-ng-click="setting.editing = false">Cancel</button>
-                <button class="btn-ok" data-ng-click="update(setting)">Save</button>
-              </li>
-            </ul>
-          </div>
+        <li data-ng-repeat="setting in settings">
+          <h3>{{setting.name}}</h3>
+          <ul>
+            <li>
+              Enemy Count: {{setting.params.maxEnemyCount}}
+            </li>
+            <li>
+              Enemy Health: {{setting.params.maxEnemyHealth}}
+            </li>
+            <li>
+              Player Health: {{setting.params.maxPlayerhealth}}
+            </li>
+            <li>
+              <button class="btn-caution" data-ng-click="edit(setting)">Edit</button>
+              <button class="btn-alert" data-ng-click="destroy(setting._id)">Destroy</button>
+            </li>
+          </ul>
         </li>
       </ul>
 		</main>
