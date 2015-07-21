@@ -2,17 +2,14 @@
 
 module.exports = function(app) {
 	app.controller('appController', ['$scope', '$http', function($scope, $http) {
-		// $scope.creating = true;
-		var refresh = function() {
-			$http.get('/settings').success(function(response) {
+		var getAll = function(){
+			$http.get('/settings').success(function(){
 				console.log('I got data');
 				console.log(response);
-				$scope.settings = response;
-				$scope.setting = '';
 			});
 		};
 
-		refresh();
+		getAll();
 
 	}]);
-}
+};
