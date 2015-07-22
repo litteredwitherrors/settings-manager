@@ -1,33 +1,34 @@
 'use strict';
 
 module.exports = function(app) {
-	app.controller('appController', ['$scope', '$http', function($scope, $http) {
-		var getAll = function(){
-			$http.get('/settings').success(function(response){
+	app.controller('appController', ['$scope', 'resource', function($scope, resource) {
+
+		var Setting = resource('settings');
+
+		$scope.getSettings = function(){
+			Setting.getAll(function(response){
 				console.log(response);
 				$scope.settings = response;
 			});
 		};
-		getAll();
 
 		$scope.submitForm = function(setting) {
-			console.log(setting);
-			$http.post('/settings', setting).success(function(response) {
-				getAll();
+			console.log('submitted');
+			Setting.submitForm(setting, function(response) {
+				$scope.getSettings();
 			});
 		};
 
 		$scope.destroy = function(id) {
 			console.log(id);
-			$http.delete('/settings/' + id).success(function(response) {
-				getAll();
+			Setting.destroy(id, function(response) {
+				$scope.getSettings();
 			});
 		}
-		
+
 		$scope.edit = function(setting) {
 			setting.editing = true;
 			console.log(setting);
 		};
-
 	}]);
 };
