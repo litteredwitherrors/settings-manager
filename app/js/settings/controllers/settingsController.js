@@ -26,6 +26,14 @@ module.exports = function(app) {
 			});
 		}
 
+		$scope.update = function(id, setting) {
+			console.log(id);
+			Setting.update(id, setting, function(response) {
+				setting.editing = false;
+				$scope.getSettings();
+			});
+		};
+
 		$scope.edit = function(setting) {
 			setting.editing = true;
 			console.log(setting);

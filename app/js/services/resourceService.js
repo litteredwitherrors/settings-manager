@@ -1,11 +1,11 @@
 'use strict';
 
 module.exports = function(app) {
-	var handleError = function(data) {
+	var errorHandler = function(data) {
 		console.log(data);
 	};
 
-	app.factory('resource', ['$http', function($http){
+	app.factory('resource', ['$http', function($http) {
 		return function(resourceName) {
 			return {
 				getAll: function(callback) {
@@ -14,26 +14,26 @@ module.exports = function(app) {
 						url: '/' + resourceName
 					})
 					.success(callback)
-					.error(handleError);
+					.error(errorHandler);
 				},
-				submitForm: function(resource, callback) {
+				submit: function(resource, callback) {
 					$http({
 						method: 'POST',
 						url: '/' + resourceName,
 						data: resource
 					})
 					.success(callback)
-					.error(handleError);
+					.error(errorHandler);
 				},
-				edit: function(resource, callback) {
-					$http({
-						method: 'PUT',
-						url: '/' + resourceName + '/' + resource._id,
-						data: resource
-					})
-					.success(callback)
-					.error(handleError);
-				},
+				update: function(id, data, callback) {
+          $http({
+            method: 'PUT',
+            url: '/' + resourceName + '/' + id,
+            data: data
+          })
+          .success(callback)
+          .error(errorHandler);
+        },
 				destroy: function(id, callback) {
 					$http({
 						method: 'DELETE',
@@ -41,9 +41,9 @@ module.exports = function(app) {
 						data: id
 					})
 					.success(callback)
-					.error(handleError);
+					.error(errorHandler);
 				}
-			};
-		};
+			}
+		}
 	}]);
 };
