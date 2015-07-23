@@ -1,0 +1,11 @@
+<form data-ng-submit="submitForm(setting)">
+	<label for="name">Name</label>
+	<input id="name" type="text" data-ng-model="setting.name">
+	<label for="maxEnemy">Enemies</label>
+	<input id="maxEnemy"type="number" data-ng-model="setting.params.maxEnemyCount">
+	<label for="maxHealth">Enemy Health</label>
+	<input id="maxHealth"type="number" data-ng-model="setting.params.maxEnemyHealth">
+	<label for="maxplayerHealth">Player Health</label>
+	<input id="maxplayerHealth"type="number" data-ng-model="setting.params.maxPlayerhealth">
+	<button type="submit">Submit</button>
+</form>
