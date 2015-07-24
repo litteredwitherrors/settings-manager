@@ -1,7 +1,7 @@
 //vendor
 @import 'reset';
 
-@import 'typography';
+/* @import 'typography'; */
 @import 'config';
 
 @import 'base';
@@ -9,6 +9,11 @@
 @import 'layout';
 @import 'buttons';
 @import 'modules';
+
+body {
+  width: 960px;
+  margin: 0 auto;
+}
 
 .ng-enter {
   transition:0.5s linear all;

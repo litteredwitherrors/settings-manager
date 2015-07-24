@@ -13,14 +13,14 @@ require('./services/resourceService.js')(settingsApp);
 require('./settings/controllers/settingsController.js')(settingsApp);
 
 //directives
+require('./settings/directives/edit_setting')(settingsApp);
 require('./settings/directives/new_setting')(settingsApp);
-require('./settings/directives/newSettingDirective')(settingsApp);
+
 
 settingsApp.config(['$routeProvider', function($routeProvider) {
 	$routeProvider
-	.when('/shit', {
-		templateUrl: '/templates/settings/directives/new_settings_template.html',
-		controller: 'settingsController'
+	.when('/', {
+		templateUrl: '/templates/settings_list_view.html'
 	})
 	.otherwise({
 		redirectTo: '/'
