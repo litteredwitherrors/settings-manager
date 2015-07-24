@@ -2,8 +2,9 @@
 
 require('angular/angular');
 require('angular-route');
+require('angular-animate');
 
-var settingsApp = angular.module('settingsApp', ['ngRoute']);
+var settingsApp = angular.module('settingsApp', ['ngRoute', 'ngAnimate']);
 
 //services
 require('./services/resourceService.js')(settingsApp);

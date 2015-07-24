@@ -10,7 +10,7 @@
     <link href='http://fonts.googleapis.com/css?family=VT323|Roboto+Condensed|Play' rel='stylesheet' type='text/css'>
 
     <!-- <link rel="stylesheet" href="css/fonts.css"> -->
-    <!-- <link rel="stylesheet" href="css/application.css"> -->
+    <link rel="stylesheet" href="css/application.css">
   </head>
   <body>
     <header class="site-header">
@@ -23,7 +23,6 @@
     </header>
 		<main data-ng-controller="appController" data-ng-init="getSettings()">
       <div data-new-setting></div>
-
       <ul>
         <li data-ng-repeat="setting in settings">
           <div data-ng-if="!setting.editing">
