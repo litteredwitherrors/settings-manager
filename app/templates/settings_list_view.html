@@ -1,20 +1,20 @@
 <div>
   <div data-new-setting></div>
   <ul>
-    <li data-ng-repeat="setting in settings">
+    <li data-ng-repeat="setting in settings" class="setting-card">
       <div data-ng-if="!setting.editing">
-        <h3>{{setting.name}}</h3>
-        <ul>
-          <li>
+        <h3 class="setting-card--title">{{setting.name}}</h3>
+        <ul class="setting-card--params">
+          <li class="param">
             Enemy Count: {{setting.params.maxEnemyCount}}
           </li>
-          <li>
+          <li class="param">
             Enemy Health: {{setting.params.maxEnemyHealth}}
           </li>
-          <li>
+          <li class="param">
             Player Health: {{setting.params.maxPlayerhealth}}
           </li>
-          <li>
+          <li class="param">
             <button class="btn-caution" data-ng-click="edit(setting)">Edit</button>
             <button class="btn-alert" data-ng-click="destroy(setting._id)">Destroy</button>
           </li>
