@@ -10,21 +10,21 @@ Game settings manager an application designed for serious settings management. T
 ### GET
 `GET /settings`
 ### POST
-`GET /settings`
+`POST /settings`
 ### PUT
-`GET /settings/:id`
+`PUT /settings/:id`
 ### DELETE
-`GET /settings/:id`
+`DELETE /settings/:id`
 
 ## Resources
 ```
 {
-	"name" : "Hardish",
-	"params" : {
-		"maxEnemyCount" : 202,
-		"maxEnemyHealth" : 2003,
-		"maxPlayerhealth" : 1003
-	}
+  "name" : "Hardish",
+  "params" : {
+    "maxEnemyCount" : 202,
+    "maxEnemyHealth" : 2003,
+    "maxPlayerhealth" : 1003
+  }
 }
 ```
 
